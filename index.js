@@ -27,3 +27,5 @@ while (entrada != "nahuel") {
 
     entrada = prompt ("Ingrese un usuario valido")
 }
+
+alert ("Bienvenido nahuel")
