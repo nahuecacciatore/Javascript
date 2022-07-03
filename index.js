@@ -20,12 +20,27 @@ alert (mensaje); */
     alert (mensaje);
 } */
 
-let entrada = prompt ("Ingrese un usuario");
 
-while (entrada != "nahuel") {
-    alert ("Usuario invalido")
+let precioInicial = 120000;
 
-    entrada = prompt ("Ingrese un usuario valido")
+function cuotas (precioInicial, cantidadCuotas) {
+    switch (cantidadCuotas) {
+        case 3:
+            return precioInicial / 3;
+            break;
+        case 6:
+            return precioInicial / 6;
+            break;
+        case 9:
+            return precioInicial / 9;
+            break;
+        case 12:
+            return precioInicial / 12;
+            break;
+        default:
+            return 0;
+            break;        
+    }
 }
 
-alert ("Bienvenido nahuel")
+console.log(cuotas(precioInicial, 3));
