@@ -21,6 +21,11 @@ alert (mensaje); */
 } */
 
 
+
+// ALT + 91/93 CORCHETES//
+
+
+
 let precioInicial = 120000;
 
 function cuotas (precioInicial, cantidadCuotas) {
@@ -44,3 +49,11 @@ function cuotas (precioInicial, cantidadCuotas) {
 }
 
 console.log(cuotas(precioInicial, 3));
+
+
+// ARRAYS //
+const cuotasDisponibles = [3,6,9,12];
+console.log( cuotasDisponibles.join (", "));
+// ARRAYS //
+
+
