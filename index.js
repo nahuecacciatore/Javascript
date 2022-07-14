@@ -11,7 +11,7 @@ let mensaje = `Hola ${nombre}`;
 
 alert (mensaje); */
 
-/* PARA CREAR LAS `` DEBO UTILIZAR ALT + 96 */
+
 
 /* for (let i = 0; i <= 5; i++) {
     let nombre = prompt ("ingrese su nombre");
@@ -21,7 +21,7 @@ alert (mensaje); */
 } */
 
 
-
+// PARA CREAR LAS `` DEBO UTILIZAR ALT + 96 //
 // ALT + 91/93 CORCHETES//
 
 
@@ -78,3 +78,11 @@ let precioInicial = parseInt(
 // Arrays //
     const cuotasDisponibles = [3,6,9,12];
     console.log( cuotasDisponibles.join (", "));
+
+
+ // DOM //
+  let container = document.getElementById ("contenedor");
+  container.innerHTML = `<h2>Su compra de $${precioInicial}
+                         sera dividida en ${cantidadCuotas} cuotas</h2>
+
+                         <p>valor de cada cuota = $${valorCuota.toFixed(2)}</p>`;
