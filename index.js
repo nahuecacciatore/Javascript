@@ -32,7 +32,7 @@ alert (mensaje); */
 
 
 //Estableciendo variables//
-let precioInicial = parseInt(
+  let precioInicial = parseInt(
     prompt("Por favor, ingrese el valor de su producto")
   );
   alert("El precio de su producto es " + precioInicial);
@@ -76,8 +76,8 @@ let precioInicial = parseInt(
 
 
 // Arrays //
-    const cuotasDisponibles = [3,6,9,12];
-    console.log( cuotasDisponibles.join (", "));
+  const cuotasDisponibles = [3,6,9,12];
+  console.log( cuotasDisponibles.join (", "));
 
 
  // DOM //
@@ -86,3 +86,24 @@ let precioInicial = parseInt(
                          sera dividida en ${cantidadCuotas} cuotas</h2>
 
                          <p>valor de cada cuota = $${valorCuota.toFixed(2)}</p>`;
+
+// Eventos //
+  let formulario = document.getElementById("formulario");
+      formulario.addEventListener("submit", validarFormulario);
+
+  function validarFormulario(e){
+      e.preventDefault();
+
+              if(e.target.children[0].value.includes("@") && e.target.children[0].value.includes(".com")){
+                 let mensaje = document.createElement("h2");
+                     mensaje.innerHTML = "¡Bienvenido! Gracias por utilizar nuestra calculadora virtual";
+                      document.body.append(mensaje);
+                      mensaje.className = "bienvenido";
+               }
+              else {
+                 let mensaje = document.createElement("h2");
+                     mensaje.innerHTML = "El correo ingresado no es valido";
+                     document.body.append(mensaje);
+                     mensaje.className = "alerta";
+              }
+  }
