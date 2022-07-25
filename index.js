@@ -94,16 +94,26 @@ alert (mensaje); */
   function validarFormulario(e){
       e.preventDefault();
 
-              if(e.target.children[0].value.includes("@") && e.target.children[0].value.includes(".com")){
+              if(e.target.children[1].value.includes("@") && e.target.children[1].value.includes(".com")){
                  let mensaje = document.createElement("h2");
-                     mensaje.innerHTML = "¡Bienvenido! Gracias por utilizar nuestra calculadora virtual";
-                      document.body.append(mensaje);
-                      mensaje.className = "bienvenido";
+                     mensaje.innerHTML = "¡Gracias! Sus datos fueron registrados";
+                     document.body.append(mensaje);
+                     mensaje.className = "bienvenido";
                }
               else {
                  let mensaje = document.createElement("h2");
-                     mensaje.innerHTML = "El correo ingresado no es valido";
+                     mensaje.innerHTML = "El correo o numero ingresado no es valido";
                      document.body.append(mensaje);
                      mensaje.className = "alerta";
               }
   }
+
+
+// Storage y JSON //
+  let usuario = document.getElementById("nombre");
+                localStorage.setItem ("nombre", `${usuario}`);
+                localStorage.getItem ("nombre");
+
+  console.log(usuario);
+
+
