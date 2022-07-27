@@ -1,31 +1,10 @@
-/* for(let i = 0; i <= 5; i++){
-    if (i === 3){
-        continue;
-    }
-
-    console.log(i);
-}
-
-let nombre = prompt ("ingrese su nombre");
-let mensaje = `Hola ${nombre}`;
-
-alert (mensaje); */
 
 
 
-/* for (let i = 0; i <= 5; i++) {
-    let nombre = prompt ("ingrese su nombre");
-    let mensaje = `hola ${nombre}`;
-
-    alert (mensaje);
-} */
 
 
 // PARA CREAR LAS `` DEBO UTILIZAR ALT + 96 //
 // ALT + 91/93 CORCHETES//
-
-
-
 
 
 
@@ -109,11 +88,26 @@ alert (mensaje); */
   }
 
 
-// Storage y JSON //
-  let usuario = document.getElementById("nombre");
-                localStorage.setItem ("nombre", `${usuario}`);
-                localStorage.getItem ("nombre");
+// Storage //
+  let boton = document.getElementById("boton");
 
-  console.log(usuario);
+  boton.addEventListener("click", (e) => {
+      let nombre   = document.getElementById("nombre");
+      let email    = document.getElementById("email");
+      let telefono = document.getElementById("numero");
+
+
+      nombre   = nombre.value;
+      localStorage.setItem("nombre", nombre);
+
+      email    = email.value;
+      localStorage.setItem("email", email);
+
+      numero = numero.value;
+      localStorage.setItem("numero", numero);
+
+
+})
+                                                    
 
 
