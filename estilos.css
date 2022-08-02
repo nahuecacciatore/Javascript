@@ -5,13 +5,16 @@
     box-sizing: border-box;
     font-family: sans-serif;
   }
- h1 {
+h1 {
   text-align: center;
  }
 h2 {
   text-align: center;
 }
 p {
+  text-align: center;
+}
+.transferencia {
   text-align: center;
 }
 .formcontainer {

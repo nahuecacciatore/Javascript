@@ -9,26 +9,43 @@
     <script src="https://kit.fontawesome.com/a13cc7abd0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Bienvenido a su calculadora de precios</h1>
+    <h1>Homebanking Cacciatore</h1>
     <div id="contenedor">
 
     </div>
-
+    <div class="transferencia">
+        <h2>Transferencia bancaria</h2>
+        <form>
+            <label>Ingrese el monto a transferir:</label>
+            <input id="inicial" type="number">
+            <br>
+            <label>Seleccione cantidad de cuotas para la transferencia</label>
+            <select id="cuotas" name="cuotas">
+                <option value="3">3</option>
+                <option value="6">6</option>
+                <option value="9">9</option>
+                <option value="12">12</option>
+            </select>
+            <br>
+            <button type="button" onclick="calcular();">Calcular</button>
+            <p>El valor de cada cuota sera de: <span id="resultado"> </span> </p>
+        </form>
+    </div>
     <div class="formcontainer">
 
         <h3>Para continuar, ingrese sus datos</h3>
         <form id="formulario" class="formulario">
             <div class="input">
                 <i class="fa-solid fa-user"></i>
-                <input id="nombre" type="text" placeholder="Ingrese su nombre">
+                <input id="nombre" type="text" placeholder="Ingrese su nombre" required>
             </div>
             <div class="input">
                 <i class="fa-solid fa-envelope"></i>
-                <input id= "email" type="email" placeholder="Ingrese su mail">
+                <input id= "email" type="email" placeholder="Ingrese su mail" required>
             </div>
             <div class="input">
                 <i class="fa-solid fa-mobile"></i>
-                <input id= "numero" type="number" placeholder="Ingrese su numero">
+                <input id= "numero" type="number" placeholder="Ingrese su numero" required>
             </div>
             <input class="boton" id="boton" type="submit" value="Guardar">
         </form>
