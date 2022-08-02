@@ -16,8 +16,11 @@
   
   
 //Estableciendo funciones//
-  function calcular(precioInicial, cantidadCuotas) {
-    document.getElementById("resultado").innerHTML = precioInicial/cantidadCuotas;
+  function calcular (){
+      const inicial = parseFloat(document.getElementById("inicial").value);
+      const cuotas = parseInt(document.getElementById("cuotas").value);
+
+      document.getElementById("resultado").innerHTML = inicial/cuotas;
   }
 
 // Arrays //
