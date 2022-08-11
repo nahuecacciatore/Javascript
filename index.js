@@ -28,14 +28,6 @@
   console.log( cuotasDisponibles.join (", "));
 
 
- // DOM //
-  let container = document.getElementById ("contenedor");
-  container.innerHTML = `<h2>Su compra de $${precioInicial}
-                         sera dividida en ${cantidadCuotas} cuotas</h2>
-
-                         <p>valor de cada cuota = $${valorCuota.toFixed(2)}</p>`;
-
-
 // Storage //
   let boton = document.getElementById("boton");
 
@@ -74,10 +66,10 @@
       const response = await fetch('./data.json');
       const numeros = await response.json();
 
-      numeros.foreach(numero => {
+      numeros.forEach(numero => {
         const li = document.createElement("li");
-              li.innerHTML = `<h2>${numero.title}</h2>`
-                              `<p>${numero.body} </p>`;
+              li.innerHTML = `<h2>${numero.nombre}</h2>
+                              <p>${numero.numero} </p>`;
 
 
         lista.append(li);                      
