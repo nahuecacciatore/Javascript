@@ -35,28 +35,6 @@
 
                          <p>valor de cada cuota = $${valorCuota.toFixed(2)}</p>`;
 
-// Eventos //
-
-  /* let formulario = document.getElementById("formulario");
-      formulario.addEventListener("submit", validarFormulario);
-
-  function validarFormulario(e){
-      e.preventDefault();
-
-              if(e.target.children[3].value.includes("@") && e.target.children[3].value.includes(".com")){
-                 let mensaje = document.createElement("h2");
-                     mensaje.innerHTML = "¡Gracias! Sus datos fueron registrados";
-                     document.body.append(mensaje);
-                     mensaje.className = "bienvenido";
-               }
-              else {
-                 let mensaje = document.createElement("h2");
-                     mensaje.innerHTML = "El correo o numero ingresado no es valido";
-                     document.body.append(mensaje);
-                     mensaje.className = "alerta";
-              }
-  } */
-
 
 // Storage //
   let boton = document.getElementById("boton");
@@ -86,6 +64,27 @@
       )
 
 })
-                                                    
+
+// Fetch
+    const traerContactos = async() => {
+    const lista = document.getElementById("listado");
 
 
+    try{
+      const response = await fetch('./data.json');
+      const numeros = await response.json();
+
+      numeros.foreach(numero => {
+        const li = document.createElement("li");
+              li.innerHTML = `<h2>${numero.title}</h2>`
+                              `<p>${numero.body} </p>`;
+
+
+        lista.append(li);                      
+      })
+    }catch (error){
+      console.log(error);
+    }
+
+  }
+  traerContactos();

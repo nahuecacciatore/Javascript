@@ -1,0 +1,6 @@
+[
+    { "nombre": "Contacto: ", "numero": 44431234, "id": 1},
+    { "nombre": "Contacto desde el exterior: ", "numero": 1522345678, "id": 2},
+    { "nombre": "Denuncias: ", "numero": 44607890, "id": 3},  
+    { "nombre": "Ventas: ", "numero": 44504567, "id": 4}  
+]
