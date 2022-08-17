@@ -50,8 +50,8 @@
 
 // Librerias SweetAlert
       Swal.fire(
-        'Felicidades!',
-        'Sus datos fueron registrados!',
+        'Transferencia completa!',
+        'La primer cuota de su transferencia fue enviada con exito!',
         'success'
       )
 
