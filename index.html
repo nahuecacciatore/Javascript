@@ -9,42 +9,51 @@
     <script src="https://kit.fontawesome.com/a13cc7abd0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 class="title">Homebanking Cacciatore</h1>
     <div id="contenedor" class="contenedor">
+        <h1 class="title">Homebanking Cacciatore</h1>
 
         <div class="transferencia">
             <h2>Transferencia bancaria</h2>
             <form>
-                <label>Ingrese el monto a transferir:</label>
-                <input id="inicial" type="number">
+                <div class="input input-control">
+                    <label>Ingrese el monto a transferir:</label>
+                    <input  id="inicial" type="number">
+                    <div class="error"></div>
+                </div>
+                <div class="input input-control">
+                    <label>Seleccione cantidad de cuotas para la transferencia</label>
+                    <select id="cuotas" name="cuotas">
+                        <option value="3">3</option>
+                        <option value="6">6</option>
+                        <option value="9">9</option>
+                        <option value="12">12</option>
+                    </select>
+                    <div class="error"></div>
+
+                </div>
                 <br>
-                <label>Seleccione cantidad de cuotas para la transferencia</label>
-                <select id="cuotas" name="cuotas">
-                    <option value="3">3</option>
-                    <option value="6">6</option>
-                    <option value="9">9</option>
-                    <option value="12">12</option>
-                </select>
-                <br>
-                <button type="button" onclick="calcular();">Calcular</button>
-                <p>El valor de cada cuota sera de: <span id="resultado"> </span> </p>
+                <button class="botoncito" type="button" onclick="calcular();">Calcular</button>
+                <p>El valor de cada cuota sera de: $<span id="resultado"> </span> </p>
             </form>
         </div>
         <div class="formcontainer">
     
             <h3>Por favor, ingrese los datos del destinatario</h3>
             <form id="formulario" class="formulario">
-                <div class="input">
+                <div class="input input-control">
                     <i class="fa-solid fa-user"></i>
                     <input id="nombre" type="text"  placeholder="Ingrese el Nombre" required>
+                    <div class="error"></div>
                 </div>
-                <div class="input">
+                <div class="input input-control">
                     <i class="fa-solid fa-envelope"></i>
                     <input id= "email" type="email"   placeholder="Ingrese el Email" required>
+                    <div class="error"></div>
                 </div>
-                <div class="input">
+                <div class="input input-control">
                     <i class="fa-solid fa-building-columns"></i>
                     <input id= "numero" type="number"  placeholder="Ingrese el CBU" required>
+                    <div class="error"></div>
                 </div>
                     <button class="boton" id="boton">
                         <div class="svg-wrapper-1">
