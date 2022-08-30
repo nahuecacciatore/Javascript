@@ -47,9 +47,10 @@ function mostrarHistorial (transferencias){
      
       transferencias.forEach(transferencia=> {
                     const li = document.createElement ("li")
-                    li.innerHTML = `<h2> ${transferencia.nombre}
-                                         ${transferencia.email}
-                                         ${transferencia.cbu}</h2>`
+                    li.innerHTML = `<p>nombre: ${transferencia.nombre}</p>
+                                    <p>email:  ${transferencia.email}</p>
+                                    <p>cbu:  ${transferencia.cbu}</p>`
+                                   
                     contenedorTransferencia.append(li)
     })
 }
