@@ -80,3 +80,15 @@
 
   }
   traerContactos();
+
+  // Historial de transferencias
+
+    const historial = document.getElementById("transferencias");
+
+    const li = document.createElement("li");
+          li.innerHTML = `<h1>Datos de ultima transferencia realizada</h1>
+                          <p>Nombre: ${nombre}</p>
+                          <p>Email: ${email}</p>
+                          <p>CBU: ${numero}</p>`
+        
+    transferencias.append(li);                      
