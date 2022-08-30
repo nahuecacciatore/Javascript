@@ -11,6 +11,7 @@
 
 
 //Estableciendo variables//
+
   let precioInicial = parseInt(document.getElementById("inicial").value);
   let cantidadCuotas = parseInt(document.getElementById("cuotas").value);
   
@@ -28,26 +29,51 @@
   console.log( cuotasDisponibles.join (", "));
 
 
+
+
+let transferencias = JSON.parse(localStorage.getItem("transferencias")) ?? [];  
+
+class Transferencia {
+  constructor(nombre, email, cbu){
+    this.nombre = nombre;
+    this.email = email;
+    this.cbu = cbu;
+  }
+}
+const contenedorTransferencia = document.getElementById("transferencias");
+
+function mostrarHistorial (transferencias){
+      contenedorTransferencia.innerHTML = ""
+     
+      transferencias.forEach(transferencia=> {
+                    const li = document.createElement ("li")
+                    li.innerHTML = `<h2> ${transferencia.nombre}
+                                         ${transferencia.email}
+                                         ${transferencia.cbu}</h2>`
+                    contenedorTransferencia.append(li)
+    })
+}
+mostrarHistorial(transferencias);
+
 // Storage //
   let boton = document.getElementById("boton");
+  
+  let nombre   = document.getElementById("nombre");
+  let email    = document.getElementById("email");
+  let numero   = document.getElementById("numero");
 
   boton.addEventListener("click", (e) => {
-      e.preventDefault();
+    e.preventDefault();
 
-      let nombre   = document.getElementById("nombre");
-      let email    = document.getElementById("email");
-      let numero   = document.getElementById("numero");
+    let nuevaTransferencia = new Transferencia(nombre.value, email.value, numero.value);
 
+    transferencias.push(nuevaTransferencia); 
 
-      nombre   = nombre.value;
-      localStorage.setItem("nombre", nombre);
+    console.log(transferencias);
 
-      email    = email.value;
-      localStorage.setItem("email", email);
+    localStorage.setItem("transferencias", JSON.stringify(transferencias));
 
-      numero   = numero.value;
-      localStorage.setItem("numero", numero);
-
+    mostrarHistorial(transferencias);
 // Librerias SweetAlert
       Swal.fire(
         'Transferencia completa!',
@@ -83,12 +109,4 @@
 
   // Historial de transferencias
 
-    const historial = document.getElementById("transferencias");
-
-    const li = document.createElement("li");
-          li.innerHTML = `<h1>Datos de ultima transferencia realizada</h1>
-                          <p>Nombre: ${nombre}</p>
-                          <p>Email: ${email}</p>
-                          <p>CBU: ${numero}</p>`
-        
-    transferencias.append(li);                      
+                       
